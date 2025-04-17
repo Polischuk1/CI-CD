@@ -30,7 +30,6 @@ jobs:
       - name: Python Shell
         shell: python
         run: |
-          python --version
           import platform
           print(platform.processor())
   

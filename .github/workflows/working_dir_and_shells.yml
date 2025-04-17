@@ -28,6 +28,7 @@ jobs:
           echo $env:GITHUB_REPOSITORY
           echo $env:GITHUB_WORKSPACE
       - name: Python Shell
+        shell: python
         run: |
           python --version
           import platform

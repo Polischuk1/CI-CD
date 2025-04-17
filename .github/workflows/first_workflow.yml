@@ -23,5 +23,5 @@ jobs:
       - name: echo a string
         run: echo "Windows String!"
       - name: Error step
-        run: doesnotexist
+        run: doesnotexist-test
 

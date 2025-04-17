@@ -11,4 +11,17 @@ jobs:
         run: |
           python --version
           echo "Hello, World!"
-          
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: View SW --version
+        run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: run-shell-commands
+    steps:
+      - name: echo a string
+        run: echo "Windows String!"
+      - name: Error step
+        run: doesnotexist
+

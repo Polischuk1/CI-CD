@@ -20,7 +20,7 @@ jobs:
           echo "JOB_LEVEL_ENV=$RANDOM" >> "$GITHUB_ENV"
       - name: Multiline ENV VAR
         run: |
-          DELIMITER=1234
+          DELIMITER=$(dd if=/dev/urandom bs=1 count=16 2>/dev/null | base64)
           echo "RANDOM_JOKE<<$DELIMITER" >> "$GITHUB_ENV"
           echo "Why did the chicken cross the road?" >> "$GITHUB_ENV"
           echo "To get to the other side!" >> "$GITHUB_ENV"

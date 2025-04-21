@@ -1,0 +1,27 @@
+name: Expressions and Context
+on: [push, pull_request, issues, workflow_dispatch]
+
+jobs:
+  using-expressions-and-context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using Expressions and Context
+        run: |
+          echo "This workflow uses expressions and context."
+          echo "GITHUB_REF: ${{ github.ref }}"
+          echo "GITHUB_SHA: ${{ github.sha }}"
+          echo "GITHUB_WORKFLOW: ${{ github.workflow }}"
+          echo "GITHUB_EVENT_NAME: ${{ github.event_name }}"
+          echo "GITHUB_ACTOR: ${{ github.actor }}"
+          echo "GITHUB_REPOSITORY: ${{ github.repository }}"
+          echo "GITHUB_RUN_ID: ${{ github.run_id }}"
+          echo ${{ 1 > 2 }}
+          echo ${{ 'string' == 'String' }}
+      - name: Dump Context
+        run: |
+          echo "Dumping context..."
+          echo "github: ${{ toJson(github) }}"
+          echo "job: ${{ toJson(job) }}"
+          echo "runner: ${{ toJson(runner) }}"
+          echo "steps: ${{ toJson(steps) }}"
+          echo "secrets: ${{ toJson(secrets) }}"

@@ -1,7 +1,7 @@
 name: Sratus Check functions
 on: [push]
 
-  jobs:
+jobs:
     job-1:
       runs-on: ubuntu-latest
       steps:

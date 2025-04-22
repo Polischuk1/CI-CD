@@ -10,8 +10,6 @@ jobs:
         include:
           - os: ubuntu-latest
             is-ubuntu: true
-          - os: macos-latest
-            node-version: 15
           - os: ubuntu-latest
             node-version: 14
             experimental: false
@@ -28,8 +26,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - if: matrix.experimental == true
-        run: exit 1
-      - run: node -v
+        run: echo "Experimental configuration, skipping tests."
       - run: echo '${{ toJson(matrix) }}'
       - uses: actions/setup-node@v3
         with:

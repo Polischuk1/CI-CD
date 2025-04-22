@@ -21,7 +21,7 @@ jobs:
       - name: Run Tests
         run: npm test
       - name: Upload Code Coverage Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         if: always()
         with:
           name: code-coverage

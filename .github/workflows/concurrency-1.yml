@@ -9,7 +9,7 @@ on:
         required: true
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.inputs.environment }}
+  group: ${{ github.workflow }}-${{ github.event.inputs.environment }} #  add github.worlkflow to the group name so that it is unique and there will be no conflict between the two workflows
   cancel-in-progress: true
 jobs:
   sleep:

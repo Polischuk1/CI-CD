@@ -21,6 +21,8 @@ jobs:
           echo "OS Version: $(cat /etc/os-release)"
       - name: Log Environment Variables
         run: echo $API_URL
+      - name: Create a file
+        run: echo "Hello World" > hello.txt
       - name: Container in step
         uses: docker://node:18.16-alpine3.17
         with:
@@ -30,3 +32,8 @@ jobs:
         uses: docker://node:18.16-alpine3.17
         with:
           args: -v
+      - name: show file contents
+        uses: docker://node:18.16-alpine3.17
+        with:
+          entrypoint: cat
+          args: hello.txt

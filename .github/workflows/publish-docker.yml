@@ -1,4 +1,4 @@
-name: Build & Publish Docker Image
+name: Build & Publish Docker Image!
 on:
   release:
     types: [published]
@@ -40,3 +40,4 @@ jobs:
           push: true
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
+          

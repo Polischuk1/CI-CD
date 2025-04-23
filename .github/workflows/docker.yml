@@ -21,3 +21,12 @@ jobs:
           echo "OS Version: $(cat /etc/os-release)"
       - name: Log Environment Variables
         run: echo $API_URL
+      - name: Container in step
+        uses: docker://node:18.16-alpine3.17
+        with:
+          entrypoint: /opt/homebrew/bin/node
+          args: -p 2+3
+      - name: Log Node Version
+        uses: docker://node:18.16-alpine3.17
+        with:
+          args: -v

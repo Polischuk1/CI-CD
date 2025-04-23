@@ -27,7 +27,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            polishchuk2/simple-node-api
+            ${{ secrets.DOCKER_USERNAME }}/simple-node-api
             ghcr.io/${{ github.repository }}
           tags: |
             type=semver,pattern={{version}}

@@ -2,7 +2,7 @@ name: Simple Action
 on: [push]
 
 jobs:
-  simple-action:
+  simple-action-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -10,6 +10,7 @@ jobs:
         id: greet
         uses: ./.github/actions/hello
         # uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
+        #test
         with:
           who_to_greet: Olha
       - name: Log Greeting Time
